@@ -15,10 +15,6 @@ RUN docker-php-ext-install zip pdo pdo_pgsql mbstring
 #RUN docker-php-ext-install pdo pdo_pgsql
 #RUN docker-php-ext-install mbstring
 
-RUN apt-get install -y curl
-
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
 
 
 

@@ -12,8 +12,8 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
     
 # LDAP requirements
-RUN apt-get update && \
-    apt-get install -y ldap-utils libldap2-dev && \
+RUN apt-get update \ &&
+    apt-get install -y ldap-utils libldap2-dev \ &&
     rm -rf /var/lib/apt/lists/*
 
 # install ldap for php

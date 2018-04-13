@@ -27,8 +27,3 @@ RUN apt-get update && \
 
 # install ldap for php
 RUN apt-get update -y && apt-get install -y php-ldap
-#RUN apt-cache search php- |more
-
-
-
-

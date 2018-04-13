@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql
 
-RUN docker-php-ext-install zip pdo pdo_pgsql mbstring ldap
+RUN docker-php-ext-install zip pdo pdo_pgsql mbstring php-ldap
 #RUN docker-php-ext-install pdo pdo_pgsql
 #RUN docker-php-ext-install mbstring
 

@@ -1,4 +1,4 @@
-FROM php:7.1-fpm
+FROM php:7.1-fpm-alpine
 
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
@@ -21,9 +21,9 @@ RUN docker-php-ext-install zip pdo pdo_pgsql mbstring
  #    docker-php-ext-install ldap
  
 # LDAP requirements
-RUN apt-get update && \
-    apt-get install -y ldap-utils libldap2-dev && \
-    rm -rf /var/lib/apt/lists/*
+#RUN apt-get update && \
+    #apt-get install -y ldap-utils libldap2-dev && \
+    #rm -rf /var/lib/apt/lists/*
 
 # install ldap for php
-RUN apt-get update -y && apt-get install -y php-ldap
+#RUN apt-get update -y && apt-get install -y php-ldap

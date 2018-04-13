@@ -1,6 +1,6 @@
 FROM php:7.1-fpm
 
-RUN apt-get install php7.1-ldap
+RUN apt-get install php-ldap
 
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \

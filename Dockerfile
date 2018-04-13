@@ -1,7 +1,6 @@
 FROM php:7.1-fpm
 
-RUN \
-    apt-get update && \
+RUN apt-get update && \
     apt-get install libldap2-dev -y && \
     rm -rf /var/lib/apt/lists/* && \
     docker-php-ext-configure ldap && \

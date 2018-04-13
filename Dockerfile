@@ -1,6 +1,11 @@
 FROM php:7.1-fpm
 
-RUN apt-get install php-ldap
+RUN \
+    apt-get update && \
+    apt-get install libldap2-dev -y && \
+    rm -rf /var/lib/apt/lists/* && \
+    docker-php-ext-configure ldap && \
+    docker-php-ext-install ldap
 
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \

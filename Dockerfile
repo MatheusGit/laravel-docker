@@ -26,8 +26,8 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # install ldap for php
-RUN apt-get update -y && apt-get install -y php7.1-ldap
-
+#RUN apt-get update -y && apt-get install -y php7.1-ldap
+RUN apt-cache search php7.1- |more
 
 
 

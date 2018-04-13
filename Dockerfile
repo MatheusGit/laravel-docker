@@ -12,12 +12,13 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
     
 # LDAP requirements
-RUN apt-get update \ &&
-    apt-get install -y ldap-utils libldap2-dev \ &&
+RUN apt-get update && apt-get install -y \
+    ldap-utils libldap2-dev && \
     rm -rf /var/lib/apt/lists/*
 
 # install ldap for php
-RUN apt-get update -y && apt-get install -y php7.1-ldap    
+RUN apt-get update && apt-get install -y \ 
+    php7.1-ldap    
 
 RUN docker-php-ext-install zip pdo pdo_pgsql mbstring 
 #RUN docker-php-ext-install pdo pdo_pgsql

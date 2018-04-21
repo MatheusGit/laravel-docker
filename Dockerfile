@@ -2,6 +2,7 @@ FROM alpine:3.7
 
 RUN set -xe \
     && apk add --update --no-cache \
+    curl \
     openssh-client \
     libmemcached-libs \
     libevent \

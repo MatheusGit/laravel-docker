@@ -46,3 +46,5 @@ RUN set -xe \
     php7-zlib \
     && apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ --allow-untrusted \
     gnu-libiconv
+    
+    RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer  

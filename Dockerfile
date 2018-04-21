@@ -51,12 +51,5 @@ RUN set -xe \
 
 #RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer     
 
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer  
-
-#Criando a pasta para o projeto
-RUN mkdir /app
-ADD . /app
-WORKDIR /app
-
 #ENTRYPOINT php artisan migrate && php artisan serve  --host=0.0.0.0 --port=8000
 

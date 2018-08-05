@@ -189,5 +189,5 @@ RUN set -xe \
    RUN rm -Rf /var/cache/apk/*
     
  
-    
+  CMD ["nginx", "-g", "daemon off;"]
     

@@ -133,6 +133,9 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 	# forward request and error logs to docker log collector
 	&& ln -sf /dev/stdout /var/log/nginx/access.log \
 	&& ln -sf /dev/stderr /var/log/nginx/error.log
+	
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx.vh.default.conf /etc/nginx/conf.d/default.conf
 
 RUN set -xe \
     && apk add --update --no-cache \
@@ -181,7 +184,7 @@ RUN set -xe \
     && apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ --allow-untrusted \
     gnu-libiconv
     
-    RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer  
+   RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer  
    
    RUN rm -Rf /var/cache/apk/*
     

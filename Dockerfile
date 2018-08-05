@@ -3,6 +3,7 @@ FROM alpine:3.7
 RUN set -xe \
     && apk add --update --no-cache \
     curl \
+    nginx \
     openssh-client \
     libmemcached-libs \
     libevent \
@@ -48,5 +49,12 @@ RUN set -xe \
     gnu-libiconv
     
     RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer  
+    
+    RUN adduser -D -g 'www' www
+    RUN mkdir /www
+    RUN chown -R www:www /var/lib/nginx
+    RUN chown -R www:www /www
+    
+ 
     
     

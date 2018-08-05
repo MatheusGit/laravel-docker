@@ -2,6 +2,7 @@ FROM nginx:stable-alpine
 
 RUN set -xe \
     && apk add --update --no-cache \
+    nginx \
     curl \
     openssh-client \
     libmemcached-libs \

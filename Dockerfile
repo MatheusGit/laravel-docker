@@ -1,4 +1,4 @@
-FROM nginx:stable-alpine
+FROM alpine:3.8
 
 RUN set -xe \
     && apk add --update --no-cache \
